@@ -60,7 +60,7 @@ typedef PRIntn PRBool;
 #define PR_TRUE 1
 #define PR_FALSE 0
 typedef enum { PR_FAILURE = -1, PR_SUCCESS = 0 } PRStatus;
-#define PR_ASSERT DCHECK
+//#define PR_ASSERT DCHECK
 #define PR_CALLBACK
 #define PR_INT16_MAX 32767
 #define NSPR_API(__type) extern __type

@@ -24,6 +24,9 @@ namespace crypto {
         typedef scoped_ptr<PointerType, OpenSSLDestroyer<PointerType, Destroyer> >
                 Type;
     };
+    struct OpenSSLFree {
+        void operator()(uint8_t* ptr) const { OPENSSL_free(ptr); }
+    };
 // Several typedefs are provided for crypto-specific primitives, for
 // short-hand and prevalence. Note that OpenSSL types related to X.509 are
 // intentionally not included, as crypto/ does not generally deal with

@@ -10,7 +10,6 @@ cmake_minimum_required(VERSION 3.22.1)
 project("nanotestapp")
 
 file(GLOB SOURCES "chromium/*.h")
-file(GLOB SOURCES_C "chromium/*.cc")
 
 
 # Creates and names a library, sets it as either STATIC
@@ -24,7 +23,9 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        native-lib.cpp ${SOURCES} ${SOURCES_C})
+        native-lib.cpp ${SOURCES}
+        chromium/base/android/scoped_java_ref.cc
+        chromium/base/third_party/nspr/prtime.cc)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
